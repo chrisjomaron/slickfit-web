@@ -48,4 +48,3 @@ def kill_process_by_name(name)
   `kill \`ps -ef | grep #{name} | grep -v grep | awk '{print $2}'\``
 end
 
-end
