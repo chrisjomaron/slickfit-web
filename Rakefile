@@ -10,10 +10,11 @@ HOME_DIR = "#{File.dirname(__FILE__)}"
 namespace :start do
 
       task :api do
+        puts `(shotgun -p 4987 api.rb)`
       end
 
       task :web do
-        puts `(shotgun -p 4567 hello.rb)`
+        puts `(shotgun -p 4567 web.rb)`
       end
 
       task :mock do
@@ -33,14 +34,6 @@ namespace :stop do
   task :mock do
   end
 
-end
-
-def start_fat_jar(jar_file, jar_configuration)
-  process = fork do
-    puts "Starting fat jar: java -jar '#{jar_file}' server '#{jar_configuration}'"
-    exec "java -jar '#{jar_file}' server '#{jar_configuration}'"
-  end
-  Process.detach(process)
 end
 
 def kill_process_by_name(name)
