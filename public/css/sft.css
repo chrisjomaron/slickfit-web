@@ -9,6 +9,11 @@ h1, h2 {
 
 h4 {
 	font-size: 17px;
+	overflow: hidden;
+	width: 90%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 ul{
@@ -17,6 +22,10 @@ ul{
 
 ul li ul{
 	padding:0;
+}
+
+#breakdown-cover p strong{
+	text-transform: uppercase;
 }
 
 /* Common */
@@ -53,6 +62,7 @@ ul li ul{
 	width: 275px;
 	font-size: 26px;
 	font-weight: bold;
+	text-transform: capitalize;
 }
 
 .start h1 small {
