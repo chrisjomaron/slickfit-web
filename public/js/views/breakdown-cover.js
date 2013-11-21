@@ -11,6 +11,7 @@ BreakdownCoverView = function(selector) {
 	      var source   = $("#break-down-cover-template").html();
 	      var template = Handlebars.compile(source);
 	      data.url = url;
+	      data.results = data.results.slice(0,3);
 	      element.html(template(data));
 	    })
 	    .done(function(){
