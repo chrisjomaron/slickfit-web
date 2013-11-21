@@ -8,7 +8,7 @@ get '/' do
     erb :home
 end
 
-get '/basic' do 
+get '/basic-car-details' do 
 	"{
     	\"make\": \"audi\",
     	\"model\": \"a3\" 
@@ -35,6 +35,13 @@ get '/breakdown' do
 				\"price\": \"£8.99\"
 			}
 		]
+	}"
+end
+
+get '/basic-tyre-prices' do 
+	"{
+    	\"make\": \"Bridgestone\",
+    	\"price\": \"12.00\" 
 	}"
 end
 
