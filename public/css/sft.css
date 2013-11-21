@@ -191,6 +191,13 @@ img.tyre-image {
 	}
 }
 
+@media (max-width: 400px) {
+	.breakdown-result-wrapper {
+		width:25%;
+	}
+	
+}
+
 
 /* MOT Section */
 
