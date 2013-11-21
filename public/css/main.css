@@ -2,6 +2,12 @@ h2 {
 	color: red;
 }
 
+div#search-container {
+	margin: 100px auto;
+	width: 250px;
+	text-align: center;
+}
+
 div#car-details {
 	display: none;
 }
