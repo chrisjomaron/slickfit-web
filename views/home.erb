@@ -82,27 +82,17 @@
 							</div>
 						</div>
 						
-						<div id="pagination-section">Pagination section</div>
+						<div class="clear">&nbsp;</div>
 					</div>
 				</div>
 				<div class="col-md-3 col-md-pull-9">
-					<div id="breakdown-cover" class="box primary-box">
+					<div class="box primary-box">
 						<h2>Breakdown Cover</h2>
-						<p>We have searched for the cheapest available beakdown cover for your <strong>Kia Picanto</strong>.</p>
-						<div id="breakdown1" class="breakdown-result-wrapper">
-							<img class="breakdown-provider-logo" src="img/RescueMyCar.jpg" alt="Rescue My Car" />
-							<p>From <span>£19.70</span> per year</p>
-							<a href="#"><img src="img/go-to-site-button-results.jpg" class="breakdown-provider-gotosite" alt="Go to site" /></a>
-						</div>
-						<div id="breakdown2" class="breakdown-result-wrapper">
-							<img class="breakdown-provider-logo" src="img/StartRescue.gif" alt="StartRescue" />
-							<p>From <span>£20.70</span> per year</p>
-							<a href="#"><img src="img/go-to-site-button-results.jpg" class="breakdown-provider-gotosite" alt="Go to site" /></a>
-						</div>
-						<div id="breakdown3" class="breakdown-result-wrapper">
-							<img class="breakdown-provider-logo" src="img/Autonational.png" alt="Autonational" />
-							<p>From <span>£21.70</span> per year</p>
-							<a href="#"><img src="img/go-to-site-button-results.jpg" class="breakdown-provider-gotosite" alt="Go to site" /></a>
+						
+						<div id="breakdown-cover" >
+							<div class="loader" >
+								<img src="/img/loader.gif" alt="Loading..." title="Loading..." /> Loading...
+							</div>
 						</div>
 						<div class="clear">&nbsp;</div>
 					</div>
@@ -161,5 +151,16 @@
 				</ul>
 			</div>
 		</div>
+	</script>
+	
+	<script id="break-down-cover-template" type="text/x-handlebars-template">
+		<p>We have searched for the cheapest available beakdown cover for your <strong>{{url}}</strong>.</p>
+		{{#each results}}
+		<div id="breakdown1" class="breakdown-result-wrapper">
+			<img class="breakdown-provider-logo" src="{{logo}}" alt="{{logo/alt}}" />
+			<p>From <span>{{price}}</span> per year</p>
+			<a href="{{proceed}}"><img src="img/go-to-site-button-results.jpg" class="breakdown-provider-gotosite" alt="Go to site" /></a>
+		</div>
+		{{/each}}
 	</script>
 </html>

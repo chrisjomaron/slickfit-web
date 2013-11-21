@@ -32,7 +32,7 @@ $(document).ready(function() {
   });
   
   var carDetailsView = new CarDetailsView("#car-summary");
-  var breakdownCoverView = new BreakdownCoverView("#breakdown-cover-container");
+  var breakdownCoverView = new BreakdownCoverView("#breakdown-cover");
   var tyrePricesView = new TyrePricesView("#results-wrapper");
   var motCentresView = new MotCentresView("#mot-centres-container");
   
@@ -44,6 +44,6 @@ $(document).ready(function() {
     carDetailsView.render();
     tyrePricesView.render();
     //motCentresView.render();
-    //breakdownCoverView.render();
+    breakdownCoverView.render();
   })  
 });
