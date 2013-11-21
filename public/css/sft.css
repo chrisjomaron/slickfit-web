@@ -3,6 +3,11 @@ header {
 	padding: 20px;
 }
 
+header img {
+	height:116px;
+	width:300px;
+}
+
 h1, h2 {
 	font-family: 'ProximaBold','Gotham Black',Helvetica,Arial,sans-serif;
 }
@@ -71,8 +76,8 @@ ul li ul{
 
 @media (max-width: 640px) {
 	header img {
-		width:99%;
-		height:99%;
+		height:116px;
+		width:300px;
 	}
 
 	.start h1{
@@ -80,7 +85,34 @@ ul li ul{
 	}
 	.start p{
 		font-size: 12px;
+	}
+
+	input#vehicle-reg {
+		width:62%;
+		margin-left:10%;
+	}
+	button#search {
+		margin-top: -125px;
+		margin-left: 60%;
+	}
 }
+
+@media (max-width: 450px) {
+	input#vehicle-reg {
+		width:62%;
+	}
+	button#search {
+		margin-top: -125px;
+		margin-left: 180px;
+	}
+}
+
+@media (max-width: 450px) {
+	
+	button#search {
+		margin-top: -125px;
+		margin-left: 180px;
+	}
 }
 
 /* Summary Section */
@@ -260,10 +292,25 @@ img.tyre-image {
 @media (max-width: 500px) {
 	.servicing-result-wrapper {
 		width:27%;
+		height:96px;
+	}
+
+	.servicing-result-wrapper p {
+		height:80px;
 	}
 	
 	.servicing-provider-gotosite{
 		width:99%;
+	}
+}
+
+@media (max-width: 640px) {
+	.servicing-result-wrapper {
+		height:96px;
+	}
+
+	.servicing-result-wrapper p {
+		height:40px;
 	}
 }
 

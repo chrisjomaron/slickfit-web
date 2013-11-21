@@ -30,7 +30,7 @@
   </head>
   <body>
   	<div class="container">
-		<header><img src="img/logo-600.png" alt="SlickFitTyres" style="height:116px;width:300px"/></header>
+		<header><img src="img/logo-600.png" alt="SlickFitTyres" /></header>
 		<div class="start">
 			<h1><small>Use SlickFitTyres to find the cheapest tyres for your car.</small></h1>
 			<p>To start, enter your <strong>car registration</strong>, so we can find out which tyres will fit.</p>
@@ -177,15 +177,15 @@
 	</script>
 
 	<script id="car-details-template" type="text/x-handlebars-template">
-				<h2 id="car-name">{{car_details.dataset.dvla.vehicledata.match.make}} {{car_details.dataset.dvla.vehicledata.match.model}}</h2>
-				<ul id="car-summary">
-					<li>{{car_details.dataset.dvla.vehicledata.match.vrm}}</li>
-					<li>{{car_details.dataset.dvla.vehicledata.match.from_to}}</li>
-					<li>{{car_details.dataset.dvla.vehicledata.match.engine_cc}}cc</li>
-					<li>{{car_details.dataset.dvla.vehicledata.match.doors}} door</li>
-					<li>{{car_details.dataset.dvla.colour.1.desc}}</li>
-				</ul>
-				<div class="clear">&nbsp;</div>
+		<h2 id="car-name">{{car_details.dataset.dvla.vehicledata.match.make}} {{car_details.dataset.dvla.vehicledata.match.model}}</h2>
+		<ul id="car-summary">
+			<li>{{car_details.dataset.dvla.vehicledata.match.vrm}}</li>
+			<li>{{car_details.dataset.dvla.vehicledata.match.from_to}}</li>
+			<li>{{car_details.dataset.dvla.vehicledata.match.engine_cc}}cc</li>
+			<li>{{car_details.dataset.dvla.vehicledata.match.doors}} door</li>
+			<li>{{car_details.dataset.dvla.colour.1.desc}}</li>
+		</ul>
+		<div class="clear">&nbsp;</div>
 	</script>
 
 	<script id="break-down-cover-template" type="text/x-handlebars-template">
