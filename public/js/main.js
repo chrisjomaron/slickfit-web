@@ -34,7 +34,7 @@ $(document).ready(function() {
   var carDetailsView = new CarDetailsView("#car-summary");
   var breakdownCoverView = new BreakdownCoverView("#breakdown-cover");
   var tyrePricesView = new TyrePricesView("#results-wrapper");
-  var motCentresView = new MotCentresView("#mot-centres-container");
+  var motCentresView = new MotCentresView("#MOT-results-list");
   
   $("#search").click(function(e) {
     e.preventDefault();
@@ -43,7 +43,12 @@ $(document).ready(function() {
 
     carDetailsView.render();
     tyrePricesView.render();
-    //motCentresView.render();
     breakdownCoverView.render();
-  })  
+  })
+
+  $("#findMOT").click(function(e) {
+    e.preventDefault();
+    motCentresView.render();
+  })
+
 });

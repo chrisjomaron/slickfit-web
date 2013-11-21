@@ -3,6 +3,7 @@ TyrePricesView = function(selector) {
 	this.selector = selector;
 	
     this.render = function() {
+    	
         var url = '/tyre-prices/' + $("#vehicle-reg").val().replace(" ", "");
         var element = $(selector);
 

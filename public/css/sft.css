@@ -267,6 +267,10 @@ img.tyre-image {
 	width:99%;
 }
 
+#map-canvas { 
+	height: 300px; width: 100%; 
+}
+
 @media (max-width: 720px) {
 	#MOT-results-list {
 		width:100%;
