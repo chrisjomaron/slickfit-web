@@ -3,16 +3,25 @@
 require 'sinatra'
 require 'shotgun'
 require 'json'
+require 'HTTPClient'
 
 get '/' do
     erb :home
 end
 
+get '/tyre-prices/:reg' do 
+	content_type :json
+	
+	http = HTTPClient.new
+	response = http.get "http://localhost:4987/tyre-prices/#{params[:reg]}"
+	response.body
+	# status, headers, body = call env.merge("PATH_INFO" => "http://localhost:4987/tyre-prices/#{params[:reg]}")
+  	# [status, headers, body.map(&:upcase)]
+end
 
 # 
 # Mock API calls
 # 
-
 
 get '/maps' do
 	erb :maps
