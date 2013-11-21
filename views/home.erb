@@ -177,13 +177,13 @@
 	</script>
 
 	<script id="car-details-template" type="text/x-handlebars-template">
-		<h2 id="car-name">{{car_details.dataset.dvla.vehicledata.match.make}} {{car_details.dataset.dvla.vehicledata.match.model}}</h2>
+		<h2 id="car-name">{{dataset.dvla.vehicledata.match.make}} {{dataset.dvla.vehicledata.match.model}}</h2>
 		<ul id="car-summary">
-			<li>{{car_details.dataset.dvla.vehicledata.match.vrm}}</li>
-			<li>{{car_details.dataset.dvla.vehicledata.match.from_to}}</li>
-			<li>{{car_details.dataset.dvla.vehicledata.match.engine_cc}}cc</li>
-			<li>{{car_details.dataset.dvla.vehicledata.match.doors}} door</li>
-			<li>{{car_details.dataset.dvla.colour.1.desc}}</li>
+			<li>{{dataset.dvla.vehicledata.match.vrm}}</li>
+			<li>{{dataset.dvla.vehicledata.match.from_to}}</li>
+			<li>{{dataset.dvla.vehicledata.match.engine_cc}}cc</li>
+			<li>{{dataset.dvla.vehicledata.match.doors}} door</li>
+			<li>{{dataset.dvla.colour.1.desc}}</li>
 		</ul>
 		<div class="clear">&nbsp;</div>
 	</script>

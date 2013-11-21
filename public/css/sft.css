@@ -99,12 +99,18 @@ ul li ul{
 
 @media (max-width: 450px) {
 	input#vehicle-reg {
-		width:62%;
+		width:50%;
 	}
 	button#search {
 		margin-top: -125px;
 		margin-left: 180px;
 	}
+
+	header img {
+		height:90px;
+		width:240px;
+	}
+
 }
 
 @media (max-width: 450px) {
@@ -116,8 +122,12 @@ ul li ul{
 }
 
 /* Summary Section */
-div#car-summary {
+div#car-summary, div#car-summary-desk {
 	text-transform:uppercase;
+}
+
+h2#car-name {
+	font-size: 26px;
 }
 
 ul#car-summary li {
@@ -306,7 +316,7 @@ img.tyre-image {
 
 @media (max-width: 640px) {
 	.servicing-result-wrapper {
-		height:96px;
+		height:96x;
 	}
 
 	.servicing-result-wrapper p {
