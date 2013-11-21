@@ -5,6 +5,10 @@ MotCentresView = function(selector) {
     this.render = function() {
      	
     	var postcode = $("#postcodeInput").val();	
+    	var element = $(selector);
+    	element.empty();
+    	$("#loader").clone().appendTo(selector).show();
+    	$("#MOT-results-wrapper").show();
 
 		$.getJSON('/mot/' + postcode, function(data) {
 	    	var source   = $("#mot-centres-template").html();

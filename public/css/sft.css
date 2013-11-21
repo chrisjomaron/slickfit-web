@@ -9,6 +9,11 @@ h1, h2 {
 
 h4 {
 	font-size: 17px;
+	overflow: hidden;
+	width: 90%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 ul{
@@ -79,12 +84,14 @@ ul li ul{
 }
 
 /* Summary Section */
+div#car-summary {
+	text-transform:uppercase;
+}
 
 ul#car-summary li {
 	display:block;
 	width:45%;
 	float:left;
-	text-transform:uppercase;
 }
 
 @media (max-width: 990px) {
