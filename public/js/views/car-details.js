@@ -15,6 +15,6 @@ CarDetailsView = function(selector) {
 	    .fail(function(error) {
 	      	console.log('Unable to get car details');
 	    });   	
-    }
-    
+ 
+    }   
 }
