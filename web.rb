@@ -3,7 +3,7 @@
 require 'sinatra'
 require 'shotgun'
 require 'json'
-require 'HTTPClient'
+require 'httpclient'
 
 get '/' do
     erb :home
