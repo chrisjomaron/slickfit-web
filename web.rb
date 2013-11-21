@@ -8,6 +8,12 @@ get '/' do
     erb :home
 end
 
+
+# 
+# Mock API calls
+# 
+
+
 get '/maps' do
 	erb :maps
 end
