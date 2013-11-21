@@ -55,28 +55,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div id="car-summary" class="box primary-box">
-						
-						<div class="row">
-							<div class="col-md-6">
-								
-								<h2 id="car-name">Kia Picanto</h2>
-								<p><a href="#">New search</a></p>
-								<ul id="car-summary">
-									<li>LB60UVT</li>
-									<li>999cc</li>
-									<li>Silver</li>
-									<li>Manual 5 Gears</li>
-									<li>5 Door Hatchback</li>
-								</ul>
-							</div>
-							<div class="col-md-6" id="tyre-summary">
-								<h2>Tyres for your car</h2>
-								<ul>
-									<li>155 / 70 R13 S 70</li>
-									<li>155 / 70 R13 S 80</li>
-									<li>155 / 70 R13 S 90</li>
-								</ul>
-							</div>
+						<div class="loader" >
+							<img src="/img/loader.gif" alt="Loading..." title="Loading..." /> Loading...
 						</div>
 					</div>
 				</div>	
@@ -157,5 +137,29 @@
 			<p class="tyre-spec">{{size}}</p>
 		</div>
 		{{/each}}
+	</script>
+
+	<script id="car-details-template" type="text/x-handlebars-template">
+		<div class="row">
+			<div class="col-md-6">
+				<h2 id="car-name">{{car_details.dataset.dvla.vehicledata.match.make}} {{car_details.dataset.dvla.vehicledata.match.model}}</h2>
+				<ul id="car-summary">
+					<li>{{car_details.dataset.mvris.vrm}}</li>
+					<li>{{car_details.dataset.mvris.cc}}cc</li>
+					<li>{{car_details.dataset.dvla.colour.[1].m.desc}}</li>
+					<li>{{car_details.dataset.mvris.gearbox_type}} gearbox</li>
+					<li>{{car_details.dataset.mvris.body.desc}}</li>
+					<li>{{car_details.dataset.mvris.fuel.desc}}</li>
+				</ul>
+			</div>
+			<div class="col-md-6" id="tyre-summary">
+				<h2>Tyres for your car</h2>
+				<ul>
+					{{#each tyre_sizes.results}}
+					<li>{{tyresize}}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
 	</script>
 </html>

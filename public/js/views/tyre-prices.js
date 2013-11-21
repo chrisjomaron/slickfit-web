@@ -3,8 +3,8 @@ TyrePricesView = function(selector) {
 	this.selector = selector;
 	
     this.render = function() {
-        var url = $("#vehicle-reg").val().replace(" ", "");
-    	$.getJSON('/tyre-prices/' + url, function(data) {
+        var url = '/tyre-prices/' + $("#vehicle-reg").val().replace(" ", "");
+    	$.getJSON(url, function(data) {
 	      var source   = $("#tyre-prices-template").html();
 	      var template = Handlebars.compile(source);
 	      $(selector).html(template(data));

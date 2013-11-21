@@ -19,6 +19,19 @@ get '/tyre-prices/:reg' do
   	# [status, headers, body.map(&:upcase)]
 end
 
+get '/car-details/:reg' do
+	content_type :json
+
+	http = HTTPClient.new
+
+	car_details = JSON.parse(http.get("http://localhost:4987/car-details/#{params[:reg]}").body)
+	tyre_sizes = JSON.parse(http.get("http://localhost:4987/tyre-sizes/#{params[:reg]}").body.gsub!("Select this option ", ""))
+
+	full_response = {car_details: car_details, tyre_sizes: tyre_sizes}
+
+	JSON.pretty_generate(full_response)
+end
+
 # 
 # Mock API calls
 # 
