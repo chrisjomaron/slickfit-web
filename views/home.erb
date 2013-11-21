@@ -1,86 +1,268 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">     
-        <title>Slick Fit Tyres</title>
+<html>
+  <head>
+    <title>SlickFitTyres</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/sft.css" rel="stylesheet">
 
-		<link rel="stylesheet" type="text/css" href="/css/main.css" />
-		
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>	
-		
-		<script src="/js/thirdparties/handlebars.js" type="text/javascript"></script>
-		<script src="/js/views/breakdown-cover.js" type="text/javascript"></script>		
-		<script src="/js/views/car-details.js" type="text/javascript"></script>
-		<script src="/js/views/tyre-prices.js" type="text/javascript"></script>
-		<script src="/js/views/mot-centres.js" type="text/javascript"></script>
-		<script src="/js/main.js" type="text/javascript"></script>
-	</head>
-	<body>
-		<div class="container">
-			<div id="search-container">
-				<h2>SlickFit Tyres</h2>
-				<input type='text' id='vehicle_reg'>
-				<a href="#" id='search'>Search</a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<div class="container">
+		<header><img src="img/logo-600.png" alt="SlickFitTyres" /></header>
+		<div class="start">
+			<h1><small>Use SlickFitTyres to find the cheapest tyres for your car.</small></h1>
+			<p>To start, enter your <strong>car registration</strong>, so we can find out which tyres will fit.</p>
+		</div>
+		<!--
+		<div class="row">
+			<div class="col-md-4" style="background-color:#666600">.col-md-4</div>
+			<div class="col-md-8" style="background-color:#999900">.col-md-8</div>
+		</div>
+		-->
+		<div class="row">
+			<div class="start">
+				
+				<form class="form-inline" role="form">
+				  <div class="form-group">
+					<label class="sr-only" for="exampleInput">Registration</label>
+					<input type="text" class="form-control" id="exampleInput" placeholder="KD63 RJY">
+				  </div>
+				  <button type="submit" class="btn  btn-primary">Find Tyres</button>
+				</form>
 			</div>
-			<div id="results-container" style="display: none;">
-				<div class="row">
-				  <div class="col-xs-6 col-md-4">
-				  	<div id="car-details-container">
-						<img src="/images/loader.gif" alt="loading..." title="loading..." />
+		</div>
+		
+		<div id="results-container" style="display:none;">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="car-summary" class="box primary-box">
+						<div class="row">
+							<div class="col-md-6">
+								
+								<h2 id="car-name">Kia Picanto</h2>
+								<p><a href="#">New search</a></p>
+								<ul id="car-summary">
+									<li>LB60UVT</li>
+									<li>999cc</li>
+									<li>Silver</li>
+									<li>Manual 5 Gears</li>
+									<li>5 Door Hatchback</li>
+								</ul>
+							</div>
+							<div class="col-md-6" id="tyre-summary">
+								<h2>Tyres for your car</h2>
+								<ul>
+									<li>155 / 70 R13 S 70</li>
+									<li>155 / 70 R13 S 80</li>
+									<li>155 / 70 R13 S 90</li>
+								</ul>
+							</div>
+						</div>
 					</div>
-				  </div>
-				  <div class="col-xs-12 col-sm-6 col-md-8">
-				  	<div id="tyre-prices-container">
-						<img src="/images/loader.gif" alt="loading..." title="loading..." />
+				</div>	
+			</div>
+			
+			<div class="row">
+				<div class="col-md-9 col-md-push-3">
+					<div id="results" class="box primary-box">
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<h2>Results</h2>
+								<label for="select-tyre-fitting">Showing results for: <label>
+								<select id="select-tyre-fitting">
+									<option value="1">155 / 70 R13 S 70</option>
+									<option value="2" selected="">155 / 70 R13 S 80</option>
+									<option value="3">155 / 70 R13 S 90</option>
+								</select>
+							</div>
+						</form>
+						<div id="results-wrapper">
+							<div class="results-box">
+								<img src="img/dunlop.gif" alt="" />
+								<h4>Primacy HP DT1</h4>
+								<ul>
+									<li class="tyre-price">£121.85</li>
+									<li><img src="img/fuel-c.gif" alt="" /></li>
+									<li><img src="img/grip-b.gif" alt="" /></li>
+									<li><img src="img/noise-67-1.gif" alt="" /></li>
+								</ul>
+								<div class="tyre-image">
+									<img src="img/tyre.jpg" class="tyre-image" />
+								</div>
+								<p class="tyre-spec">215/55 R16 H</p>
+							</div>
+							
+							<div class="results-box">
+								<img src="img/dunlop.gif" alt="" />
+								<h4>Primacy HP DT1</h4>
+								<ul>
+									<li class="tyre-price">£121.85</li>
+									<li><img src="img/fuel-c.gif" alt="" /></li>
+									<li><img src="img/grip-b.gif" alt="" /></li>
+									<li><img src="img/noise-67-1.gif" alt="" /></li>
+								</ul>
+								<div class="tyre-image">
+									<img src="img/tyre.jpg" class="tyre-image" />
+								</div>
+								<p class="tyre-spec">215/55 R16 H</p>
+							</div>
+							
+							<div class="results-box">
+								<img src="img/dunlop.gif" alt="" />
+								<h4>Primacy HP DT1</h4>
+								<ul>
+									<li class="tyre-price">£121.85</li>
+									<li><img src="img/fuel-c.gif" alt="" /></li>
+									<li><img src="img/grip-b.gif" alt="" /></li>
+									<li><img src="img/noise-67-1.gif" alt="" /></li>
+								</ul>
+								<div class="tyre-image">
+									<img src="img/tyre.jpg" class="tyre-image" />
+								</div>
+								<p class="tyre-spec">215/55 R16 H</p>
+							</div>
+							
+							<div class="results-box">
+								<img src="img/dunlop.gif" alt="" />
+								<h4>Primacy HP DT1</h4>
+								<ul>
+									<li class="tyre-price">£121.85</li>
+									<li><img src="img/fuel-c.gif" alt="" /></li>
+									<li><img src="img/grip-b.gif" alt="" /></li>
+									<li><img src="img/noise-67-1.gif" alt="" /></li>
+								</ul>
+								<div class="tyre-image">
+									<img src="img/tyre.jpg" class="tyre-image" />
+								</div>
+								<p class="tyre-spec">215/55 R16 H</p>
+							</div>
+							
+							<div class="results-box">
+								<img src="img/dunlop.gif" alt="" />
+								<h4>Primacy HP DT1</h4>
+								<ul>
+									<li class="tyre-price">£121.85</li>
+									<li><img src="img/fuel-c.gif" alt="" /></li>
+									<li><img src="img/grip-b.gif" alt="" /></li>
+									<li><img src="img/noise-67-1.gif" alt="" /></li>
+								</ul>
+								<div class="tyre-image">
+									<img src="img/tyre.jpg" class="tyre-image" />
+								</div>
+								<p class="tyre-spec">215/55 R16 H</p>
+							</div>
+							
+							<div class="results-box">
+								<img src="img/dunlop.gif" alt="" />
+								<h4>Primacy HP DT1</h4>
+								<ul>
+									<li class="tyre-price">£121.85</li>
+									<li><img src="img/fuel-c.gif" alt="" /></li>
+									<li><img src="img/grip-b.gif" alt="" /></li>
+									<li><img src="img/noise-67-1.gif" alt="" /></li>
+								</ul>
+								<div class="tyre-image">
+									<img src="img/tyre.jpg" class="tyre-image" />
+								</div>
+								<p class="tyre-spec">215/55 R16 H</p>
+							</div>
+							
+							<div class="results-box">
+								<img src="img/dunlop.gif" alt="" />
+								<h4>Primacy HP DT1</h4>
+								<ul>
+									<li class="tyre-price">£121.85</li>
+									<li><img src="img/fuel-c.gif" alt="" /></li>
+									<li><img src="img/grip-b.gif" alt="" /></li>
+									<li><img src="img/noise-67-1.gif" alt="" /></li>
+								</ul>
+								<div class="tyre-image">
+									<img src="img/tyre.jpg" class="tyre-image" />
+								</div>
+								<p class="tyre-spec">215/55 R16 H</p>
+							</div>
+							
+							<div class="results-box">
+								<img src="img/dunlop.gif" alt="" />
+								<h4>Primacy HP DT1</h4>
+								<ul>
+									<li class="tyre-price">£121.85</li>
+									<li><img src="img/fuel-c.gif" alt="" /></li>
+									<li><img src="img/grip-b.gif" alt="" /></li>
+									<li><img src="img/noise-67-1.gif" alt="" /></li>
+								</ul>
+								<div class="tyre-image">
+									<img src="img/tyre.jpg" class="tyre-image" />
+								</div>
+								<p class="tyre-spec">215/55 R16 H</p>
+							</div>
+							
+							<div class="results-box">
+								<img src="img/dunlop.gif" alt="" />
+								<h4>Primacy HP DT1</h4>
+								<ul>
+									<li class="tyre-price">£121.85</li>
+									<li><img src="img/fuel-c.gif" alt="" /></li>
+									<li><img src="img/grip-b.gif" alt="" /></li>
+									<li><img src="img/noise-67-1.gif" alt="" /></li>
+								</ul>
+								<div class="tyre-image">
+									<img src="img/tyre.jpg" class="tyre-image" />
+								</div>
+								<p class="tyre-spec">215/55 R16 H</p>
+							</div>
+						</div>
+						
+						<div id="pagination-section">Pagination section</div>
 					</div>
-				  </div>
-				</div>		
-				<div class="row">
-				  <div class="col-xs-6 col-md-4">
-				  	<div id="breakdown-cover-container">
-						<img src="/images/loader.gif" alt="loading..." title="loading..." />
+				</div>
+				<div class="col-md-3 col-md-pull-9">
+					<div id="breakdown-cover" class="box primary-box">
+						<h2>Breakdown Cover</h2>
+						<p>We have searched for the cheapest available beakdown cover for your <strong>Kia Picanto</strong>.</p>
+						<div id="breakdown1" class="breakdown-result-wrapper">
+							<img src="img/RescueMyCar.jpg" alt="Rescue My Car" />
+							<p>From <span>£19.70</span> per year</p>
+							<a href="#"><img src="img/go-to-site-button-results.jpg" alt="Go to site" /></a>
+						</div>
+						<div id="breakdown2" class="breakdown-result-wrapper">
+							<img src="img/StartRescue.gif" alt="StartRescue" />
+							<p>From <span>£20.70</span> per year</p>
+							<a href="#"><img src="img/go-to-site-button-results.jpg" alt="Go to site" /></a>
+						</div>
+						<div id="breakdown3" class="breakdown-result-wrapper">
+							<img src="img/Autonational.png" alt="Autonational" />
+							<p>From <span>£21.70</span> per year</p>
+							<a href="#"><img src="img/go-to-site-button-results.jpg" alt="Go to site" /></a>
+						</div>
+						<div class="clear">&nbsp;</div>
 					</div>
-				  </div>
-				  <div class="col-xs-12 col-sm-6 col-md-8">
-				  	<div id="mot-centres-container">
-						<img src="/images/loader.gif" alt="loading..." title="loading..." />
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<div id="mot" class="box secondary-box">
+						<h2>MOT Centres</h2>
 					</div>
-				  </div>
 				</div>
 			</div>
 		</div>
-	</body>
-
-	<script id="car-details-template" type="text/x-handlebars-template">
-	    <div>
-	    	<h4>Car Details</h4>
-	    	<p>Make - {{make}}</p>
-	    	<p>Model - {{model}}</p>
-	    </div>
-	</script>
-	<script id="tyre-prices-template" type="text/x-handlebars-template">
-	    <div>
-	    	<h4>Tyre Prices</h4>
-	    	<p>Make - {{make}}</p>
-	    	<p>Price - {{price}}</p>
-	    </div>
-	</script>
-	<script id="mot-centres-template" type="text/x-handlebars-template">
-	    <div>
-	    	<h4>MOT Centres</h4>
-	    </div>
-	</script>
-	<script id="breakdown-cover-template" type="text/x-handlebars-template">
-	    <div>
-	    	<h4>Breakdown Cover</h4>
-	    	{{#each results}}
-	    	<p>{{providerName}} - {{price}}</p>
-	    	{{/each}}
-	    </div>
-	</script>
+	</div>  
+	
+  </body>
 </html>

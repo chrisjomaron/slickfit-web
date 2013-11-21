@@ -4,7 +4,7 @@ TyrePricesView = function(selector) {
 	
     this.render = function() {
         
-    	$.getJSON('/basic-tyre-prices', function(data) {      
+    	$.getJSON('http://localhost:4987/basic-tyre-prices', function(data) {      
 	      var source   = $("#tyre-prices-template").html();
 	      var template = Handlebars.compile(source);
 	      $(selector).html(template(data));
