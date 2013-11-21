@@ -32,6 +32,7 @@ $(document).ready(function() {
   });
   
   var carDetailsView = new CarDetailsView("#car-summary");
+  var carDetailsViewDesk = new CarDetailsView("#car-summary-desk");
   var breakdownCoverView = new BreakdownCoverView("#breakdown-cover");
   var tyrePricesView = new TyrePricesView("#results-wrapper");
   var motCentresView = new MotCentresView("#MOT-results-list");
@@ -42,6 +43,7 @@ $(document).ready(function() {
     $("#search-results").show();
 
     carDetailsView.render();
+    carDetailsViewDesk.render();
     tyrePricesView.render();
     breakdownCoverView.render();
   })

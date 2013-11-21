@@ -19,6 +19,10 @@ ul li ul{
 	padding:0;
 }
 
+#breakdown-cover p strong{
+	text-transform: uppercase;
+}
+
 /* Common */
 
 .box {
@@ -53,6 +57,7 @@ ul li ul{
 	width: 275px;
 	font-size: 26px;
 	font-weight: bold;
+	text-transform: capitalize;
 }
 
 .start h1 small {

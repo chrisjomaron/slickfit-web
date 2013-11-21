@@ -55,7 +55,7 @@
 		<div id="search-results" style="display: none;">
 			<div class="row">
 				<div class="col-md-12">
-					<div id="car-summary" class="box primary-box">
+					<div id="car-summary" class="box primary-box hidden-md hidden-lg">
 						
 					</div>
 				</div>	
@@ -82,6 +82,9 @@
 					</div>
 				</div>
 				<div class="col-md-3 col-md-pull-9">
+					<div id="car-summary-desk" class="box primary-box visible-md visible-lg">
+
+					</div>
 					<div class="box primary-box">
 						<h2>Breakdown Cover</h2>
 						<div id="breakdown-cover" >
@@ -96,7 +99,7 @@
 				<div class="col-md-12">
 					<div id="mot" class="box secondary-box">
 						<h2>MOT Centres</h2>
-						<p>Enter your postcode or town name to find the nearest registered MOT centres ito you.</p>
+						<p>Enter your postcode or town name to find the nearest registered MOT centres to you.</p>
 						<form role="form">
 						  <div class="form-group">
 							<div id="MOT-postcode">
@@ -164,8 +167,7 @@
 	</script>
 
 	<script id="car-details-template" type="text/x-handlebars-template">
-		<div class="row">
-			<div class="col-md-6">
+
 				<h2 id="car-name">{{car_details.dataset.dvla.vehicledata.match.make}} {{car_details.dataset.dvla.vehicledata.match.model}}</h2>
 				<ul id="car-summary">
 					<li>{{car_details.dataset.dvla.vehicledata.match.vrm}}</li>
@@ -174,20 +176,12 @@
 					<li>{{car_details.dataset.dvla.vehicledata.match.doors}} door</li>
 					<li>{{car_details.dataset.dvla.colour.1.desc}}</li>
 				</ul>
-			</div>
-			<div class="col-md-6" id="tyre-summary">
-				<h2>Tyres for your car</h2>
-				<ul>
-					{{#each tyre_sizes.results}}
-					<li>{{tyresize}}</li>
-					{{/each}}
-				</ul>
-			</div>
-		</div>
+				<div class="clear">&nbsp;</div>
+
 	</script>
 
 	<script id="break-down-cover-template" type="text/x-handlebars-template">
-		<p>We have searched for the cheapest available beakdown cover for your <strong>{{url}}</strong>.</p>
+		<p>We have searched for the cheapest available breakdown cover for your vehicle, <strong>({{url}})</strong>.</p>
 		{{#each results}}
 		<div id="breakdown1" class="breakdown-result-wrapper">
 			<img class="breakdown-provider-logo" src="{{logo}}" alt="{{logo/alt}}" />
