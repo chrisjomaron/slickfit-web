@@ -3,8 +3,8 @@ TyrePricesView = function(selector) {
 	this.selector = selector;
 	
     this.render = function() {
-        
-    	$.getJSON('http://localhost:4987/basic-tyre-prices', function(data) {      
+        var url = $("#vehicle-reg").val();
+    	$.getJSON('/tyre-prices/' + url, function(data) {
 	      var source   = $("#tyre-prices-template").html();
 	      var template = Handlebars.compile(source);
 	      $(selector).html(template(data));
@@ -16,5 +16,4 @@ TyrePricesView = function(selector) {
 	      	console.log('Unable to get tyre prices');
 	    });   	
     }
-    
 }
