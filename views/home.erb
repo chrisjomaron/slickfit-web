@@ -90,6 +90,15 @@
 						<div class="clear">&nbsp;</div>
 					</div>
 				</div>
+				<div class="col-md-3 col-md-pull-9">
+					<div class="box primary-box">
+						<h2>Service Prices</h2>
+						<div id="services" >
+
+						</div>
+						<div class="clear">&nbsp;</div>
+					</div>
+				</div>
 			</div>
 			
 			<div class="row">
@@ -190,10 +199,20 @@
 	<script id="break-down-cover-template" type="text/x-handlebars-template">
 		<p>We have searched for the cheapest available beakdown cover for your <strong>{{url}}</strong>.</p>
 		{{#each results}}
-		<div id="breakdown1" class="breakdown-result-wrapper">
+		<div id="breakdown" class="breakdown-result-wrapper">
 			<img class="breakdown-provider-logo" src="{{logo}}" alt="{{logo/alt}}" />
 			<p>From <span>{{price}}</span> per year</p>
 			<a href="{{proceed}}"><img src="img/go-to-site-button-results.jpg" class="breakdown-provider-gotosite" alt="Go to site" /></a>
+		</div>
+		{{/each}}
+	</script>
+
+	<script id="servicing-template" type="text/x-handlebars-template">
+		<p>We have searched for the cheapest available beakdown cover for your <strong>{{url}}</strong>.</p>
+		{{#each results}}
+		<div id="servicing" class="servicing-result-wrapper">
+			<p>{{service_type}} for {{price}}</p>
+			<a href="#"><img src="img/go-to-site-button-results.jpg" class="servicing-gotosite" alt="Go to site" /></a>
 		</div>
 		{{/each}}
 	</script>

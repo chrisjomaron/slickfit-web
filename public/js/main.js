@@ -35,6 +35,7 @@ $(document).ready(function() {
   var breakdownCoverView = new BreakdownCoverView("#breakdown-cover");
   var tyrePricesView = new TyrePricesView("#results-wrapper");
   var motCentresView = new MotCentresView("#MOT-results-list");
+  var servicingView = new servicingView("#servicing");
   
   $("#search").click(function(e) {
     e.preventDefault();
