@@ -221,6 +221,53 @@ img.tyre-image {
 	
 }
 
+/* Servicing Section */
+
+.servicing-result-wrapper {
+	background-color: #fff;
+	text-align:center;
+	margin:10px 0;
+	padding:10px;
+}
+
+.servicing-result-wrapper p span {
+	color: #00aeef;
+	font-weight:bold;
+}
+
+.clear {
+	clear:both;
+}
+
+@media (max-width: 991px) {
+	.servicing-result-wrapper {
+		width:28%;
+		float:left;
+		margin: 0 10px
+	}
+}
+
+@media (max-width: 500px) {
+	.servicing-result-wrapper {
+		width:27%;
+	}
+	
+	.servicing-provider-gotosite{
+		width:99%;
+	}
+}
+
+@media (max-width: 400px) {
+	.servicing-result-wrapper {
+		width:25%;
+		height:130px;
+	}
+
+	.servicing-result-wrapper p {
+		height:80px;
+	}
+	
+}
 
 /* MOT Section */
 

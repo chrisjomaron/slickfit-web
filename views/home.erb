@@ -17,6 +17,7 @@
 	<script src="/js/views/car-details.js" type="text/javascript"></script>
 	<script src="/js/views/tyre-prices.js" type="text/javascript"></script>
 	<script src="/js/views/mot-centres.js" type="text/javascript"></script>
+	<script src="/js/views/servicing.js" type="text/javascript"></script>
 
 	<script src="/js/main.js" type="text/javascript"></script>
 
@@ -92,8 +93,8 @@
 				</div>
 				<div class="col-md-3 col-md-pull-9">
 					<div class="box primary-box">
-						<h2>Service Prices</h2>
-						<div id="services" >
+						<h2>Servicing prices</h2>
+						<div id="servicing">
 
 						</div>
 						<div class="clear">&nbsp;</div>
@@ -207,11 +208,11 @@
 	</script>
 
 	<script id="servicing-template" type="text/x-handlebars-template">
-		<p>We have searched for the cheapest available beakdown cover for your <strong>{{url}}</strong>.</p>
+		<p>Will collect and service your car for you</p>
 		{{#each results}}
 		<div id="servicing" class="servicing-result-wrapper">
-			<p>{{service_type}} for {{price}}</p>
-			<a href="#"><img src="img/go-to-site-button-results.jpg" class="servicing-gotosite" alt="Go to site" /></a>
+			<p>{{service_type}} for <span>{{price}}</span></p>
+			<a href="#"><img src="img/go-to-site-button-results.jpg" class="servicing-provider-gotosite" alt="Go to site" /></a>
 		</div>
 		{{/each}}
 	</script>

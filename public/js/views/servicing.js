@@ -14,10 +14,10 @@ ServicingView = function(selector) {
 	      element.html(template(data));
 	    })
 	    .done(function(){
-	    	console.log('Finished get servcing');      
+	    	console.log('Finished get servicing');      
 	    })
 	    .fail(function(error) {
-	      	console.log('Unable to get servcing');
+	      	console.log('Unable to get servicing');
 	    });   	
     }
     
