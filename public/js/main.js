@@ -8,6 +8,8 @@ $(document).ready(function() {
   $("#search").click(function(e) {
     e.preventDefault();
 
+    $("#results-container").show();
+
     carDetailsView.render();
     tyrePricesView.render();
     motCentresView.render();
