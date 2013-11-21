@@ -8,6 +8,10 @@ get '/' do
     erb :home
 end
 
+get '/maps' do
+	erb :maps
+end
+
 get '/basic-car-details' do 
 	"{
     	\"make\": \"audi\",
