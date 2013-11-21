@@ -4,10 +4,14 @@ TyrePricesView = function(selector) {
 	
     this.render = function() {
         var url = '/tyre-prices/' + $("#vehicle-reg").val().replace(" ", "");
+        var element = $(selector);
+
+        element.empty();
+        $("#loader").clone().appendTo(selector).show();
     	$.getJSON(url, function(data) {
 	      var source   = $("#tyre-prices-template").html();
 	      var template = Handlebars.compile(source);
-	      $(selector).html(template(data));
+	      element.html(template(data));
 	    })
 	    .done(function(){
 	    	console.log('Finished getting tyre prices');      
