@@ -11,7 +11,7 @@ end
 
 get '/tyre-prices/:reg' do 
 	content_type :json
-	
+
 	http = HTTPClient.new
 	response = http.get "http://localhost:4987/tyre-prices/#{params[:reg]}"
 	response.body
