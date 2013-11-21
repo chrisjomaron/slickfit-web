@@ -64,17 +64,6 @@
 			<div class="row">
 				<div class="col-md-9 col-md-push-3">
 					<div id="results" class="box primary-box">
-						<form class="form-horizontal" role="form">
-							<div class="form-group">
-								<h2>Results</h2>
-								<label for="select-tyre-fitting">Showing results for: <label>
-								<select id="select-tyre-fitting">
-									<option value="1">155 / 70 R13 S 70</option>
-									<option value="2" selected="">155 / 70 R13 S 80</option>
-									<option value="3">155 / 70 R13 S 90</option>
-								</select>
-							</div>
-						</form>
 						<div id="results-wrapper">
 						</div>
 						
@@ -130,7 +119,18 @@
   </body>
 
   <script id="tyre-prices-template" type="text/x-handlebars-template">
-  		{{#each results}}
+  		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<h2>Results</h2>
+				<label for="select-tyre-fitting">Showing results for: <label>
+				<select id="select-tyre-fitting">
+				{{#each tyre_sizes.results}}
+					<option value="@index">{{tyresize}}</option>
+				{{/each}}
+				</select>
+			</div>
+		</form>
+  		{{#each tyre_prices.results}}
   		<div class="results-box {{#ifCond @index "<" 3}}recommended{{/ifCond}}">
 			<img  src="{{manufacturer}}" alt="" />
 			<h4>{{manufacturername}}</h4>
@@ -166,21 +166,13 @@
 	<script id="car-details-template" type="text/x-handlebars-template">
 		<div class="row">
 			<div class="col-md-6">
-				<h2 id="car-name">{{car_details.dataset.dvla.vehicledata.match.make}} {{car_details.dataset.dvla.vehicledata.match.model}}</h2>
+				<h2 id="car-name">{{dataset.dvla.vehicledata.match.make}} {{dataset.dvla.vehicledata.match.model}}</h2>
 				<ul id="car-summary">
-					<li>{{car_details.dataset.dvla.vehicledata.match.vrm}}</li>
-					<li>{{car_details.dataset.dvla.vehicledata.match.from_to}}</li>
-					<li>{{car_details.dataset.dvla.vehicledata.match.engine_cc}}cc</li>
-					<li>{{car_details.dataset.dvla.vehicledata.match.doors}} door</li>
-					<li>{{car_details.dataset.dvla.colour.1.desc}}</li>
-				</ul>
-			</div>
-			<div class="col-md-6" id="tyre-summary">
-				<h2>Tyres for your car</h2>
-				<ul>
-					{{#each tyre_sizes.results}}
-					<li>{{tyresize}}</li>
-					{{/each}}
+					<li>{{dataset.dvla.vehicledata.match.vrm}}</li>
+					<li>{{dataset.dvla.vehicledata.match.from_to}}</li>
+					<li>{{dataset.dvla.vehicledata.match.engine_cc}}cc</li>
+					<li>{{dataset.dvla.vehicledata.match.doors}} door</li>
+					<li>{{dataset.dvla.colour.1.desc}}</li>
 				</ul>
 			</div>
 		</div>

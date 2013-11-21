@@ -30,16 +30,14 @@ end
 get '/tyre-prices/:reg' do 
 	content_type :json
 
-	response = @http.get "http://localhost:4987/tyre-prices/#{params[:reg]}"
-	response.body
+	tyre_prices = JSON.parse(@http.get("http://localhost:4987/tyre-prices/#{params[:reg]}").body)
+	tyre_sizes = JSON.parse(@http.get("http://localhost:4987/tyre-sizes/#{params[:reg]}").body.gsub!("Select this option ", ""))
+
+	full_response = {tyre_prices: tyre_prices, tyre_sizes: tyre_sizes}
+
+	JSON.pretty_generate(full_response)
 end
 
-get '/tyre-sizes/:reg' do 
-	content_type :json
-
-	response = @http.get "http://localhost:4987/tyre-sizes/#{params[:reg]}"
-	response.body
-end
 
 get '/break-down-cover/:reg' do 
 	content_type :json
@@ -70,12 +68,8 @@ get '/car-details/:reg' do
 
 	http = HTTPClient.new
 
-	car_details = JSON.parse(http.get("http://localhost:4987/car-details/#{params[:reg]}").body)
-	tyre_sizes = JSON.parse(http.get("http://localhost:4987/tyre-sizes/#{params[:reg]}").body.gsub!("Select this option ", ""))
-
-	full_response = {car_details: car_details, tyre_sizes: tyre_sizes}
-
-	JSON.pretty_generate(full_response)
+	response = @http.get "http://localhost:4987/car-details/#{params[:reg]}"
+	response.body
 end
 
 # 
