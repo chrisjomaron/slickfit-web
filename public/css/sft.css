@@ -15,6 +15,10 @@ ul{
 	list-style-type:none;
 }
 
+ul li ul{
+	padding:0;
+}
+
 /* Common */
 
 .box {
@@ -196,10 +200,84 @@ img.tyre-image {
 	}
 }
 
+@media (max-width: 400px) {
+	.breakdown-result-wrapper {
+		width:25%;
+	}
+	
+}
+
 
 /* MOT Section */
 
+#MOT-postcode {
+	width:30%;
+	float:left;
+	padding: 0 20px;
+}
 
+#MOT-distance {
+	width:20%;
+	float:left;
+}
 
-/* Responsive */
+#MOT-distance label {
+	padding: 0;
+	margin: 0;
+}
+#MOT-distance select {
+	padding: 0;
+	margin: 7px 0;
+}
+
+#MOT-results-wrapper {
+	margin-top: 20px;
+	padding-top:20px;
+	clear:left;
+}
+
+#MOT-results-list {
+	width:50%;
+	float:left;
+}
+
+.MOT-centre-name {
+	font-weight:bold;
+	margin-top:20px;
+}
+
+#MOT-results-map {
+	width:50%;
+	float:left;
+}
+
+#MOT-button {
+	width:40%;
+	float:left;
+}
+
+.MOT-map {
+	width:99%;
+}
+
+@media (max-width: 720px) {
+	#MOT-results-list {
+		width:100%;
+	}
+	
+	#MOT-results-map {
+		width:100%;
+	}
+	
+	#MOT-postcode {
+		width:100%;
+		float:left;
+		padding: 0 20px;
+	}
+
+	#MOT-distance {
+		width:100%;
+		float:left;
+	}
+}
 

@@ -257,6 +257,71 @@
 			<div class="col-md-12">
 				<div id="mot" class="box secondary-box">
 					<h2>MOT Centres</h2>
+					<p>Enter your postcode or town name to find the nearest registered MOT centres ito you.</p>
+					<form role="form">
+					  <div class="form-group">
+						<div id="MOT-postcode">
+						<label class="sr-only" for="exampleInput">Postcode</label>
+						<input type="text" class="form-control" id="exampleInput" placeholder="Enter postcode or place name">
+						</div>
+						<div id="MOT-distance">
+						<label for="select-tyre-fitting">Distance: <label>
+							<select id="select-tyre-fitting">
+								<option value="1">0 to 5 miles</option>
+								<option value="2" selected="">5 - 10 miles</option>
+								<option value="3">10 - 25 miles</option>
+								<option value="4">25 - 50 miles</option>
+							</select>
+						</div>
+						<div id="MOT-button">
+							<button type="submit" class="btn  btn-primary">Find MOT Centres</button>
+						</div>
+					  </div>
+					  
+					  <!-- MOT results -->
+					  <div id="MOT-results-wrapper">
+						<div id="MOT-results-list">
+						<p>Your nearest MOT Centres to <span>CH1 1AX</span></p>     
+						<p><a href="#">Search again</a></p>
+						<ul>
+							<li>
+								<ul>
+									<li class="MOT-centre-name">The Mot Centre</li>
+									<li>New Crane St, Chester, Cheshire CH1 4JE  01244 380200</li>
+									<li>chestermot.co.uk</li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li class="MOT-centre-name">National Tyres and Autocare</li>
+									<li>24 Vicars Cross Rd, Chester CH3 5NB  01244 341272</li>
+									<li>national.co.uk</li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li class="MOT-centre-name">Manor Garage</li>
+									<li>Lightfoot Street, Chester, Cheshire CH2 3AL  01244 346886</li>
+									<li>manor-garage.com</li>
+								</ul>
+							</li>
+							<li>
+								<ul>
+									<li class="MOT-centre-name">Autocare</li>
+									<li>7 Kitchen St, Chester, Cheshire CH1 4JH  01244 346420</li>
+									<li>chesterautocare.co.uk</li>
+								<ul>
+							</li>
+						</ul>
+						</div>
+						<div id="MOT-results-map">
+							<!-- placeholder map image -->
+							<img src="img/map.png" class="MOT-map" />
+						</div>
+					  </div>
+					  
+					</form>
+					<div class="clear">&nbsp;</div>
 				</div>
 			</div>
 		</div>
