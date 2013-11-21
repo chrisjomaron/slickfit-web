@@ -56,28 +56,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div id="car-summary" class="box primary-box">
-						
-						<div class="row">
-							<div class="col-md-6">
-								
-								<h2 id="car-name">Kia Picanto</h2>
-								<p><a href="#">New search</a></p>
-								<ul id="car-summary">
-									<li>LB60UVT</li>
-									<li>999cc</li>
-									<li>Silver</li>
-									<li>Manual 5 Gears</li>
-									<li>5 Door Hatchback</li>
-								</ul>
-							</div>
-							<div class="col-md-6" id="tyre-summary">
-								<h2>Tyres for your car</h2>
-								<ul>
-									<li>155 / 70 R13 S 70</li>
-									<li>155 / 70 R13 S 80</li>
-									<li>155 / 70 R13 S 90</li>
-								</ul>
-							</div>
+						<div class="loader" >
+							<img src="/img/loader.gif" alt="Loading..." title="Loading..." /> Loading...
 						</div>
 					</div>
 				</div>	
@@ -103,27 +83,17 @@
 							</div>
 						</div>
 						
-						<div id="pagination-section">Pagination section</div>
+						<div class="clear">&nbsp;</div>
 					</div>
 				</div>
 				<div class="col-md-3 col-md-pull-9">
-					<div id="breakdown-cover" class="box primary-box">
+					<div class="box primary-box">
 						<h2>Breakdown Cover</h2>
-						<p>We have searched for the cheapest available beakdown cover for your <strong>Kia Picanto</strong>.</p>
-						<div id="breakdown1" class="breakdown-result-wrapper">
-							<img class="breakdown-provider-logo" src="img/RescueMyCar.jpg" alt="Rescue My Car" />
-							<p>From <span>£19.70</span> per year</p>
-							<a href="#"><img src="img/go-to-site-button-results.jpg" class="breakdown-provider-gotosite" alt="Go to site" /></a>
-						</div>
-						<div id="breakdown2" class="breakdown-result-wrapper">
-							<img class="breakdown-provider-logo" src="img/StartRescue.gif" alt="StartRescue" />
-							<p>From <span>£20.70</span> per year</p>
-							<a href="#"><img src="img/go-to-site-button-results.jpg" class="breakdown-provider-gotosite" alt="Go to site" /></a>
-						</div>
-						<div id="breakdown3" class="breakdown-result-wrapper">
-							<img class="breakdown-provider-logo" src="img/Autonational.png" alt="Autonational" />
-							<p>From <span>£21.70</span> per year</p>
-							<a href="#"><img src="img/go-to-site-button-results.jpg" class="breakdown-provider-gotosite" alt="Go to site" /></a>
+						
+						<div id="breakdown-cover" >
+							<div class="loader" >
+								<img src="/img/loader.gif" alt="Loading..." title="Loading..." /> Loading...
+							</div>
 						</div>
 						<div class="clear">&nbsp;</div>
 					</div>
@@ -183,7 +153,6 @@
 		{{/each}}
 	</script>
 
-
 	<script id="mot-centres-template" type="text/x-handlebars-template">
 			<p>Your nearest MOT Centres to <span>{{postcode}}</span></p>
 			<ul>
@@ -199,5 +168,39 @@
 		
 	</script>
 
+	<script id="car-details-template" type="text/x-handlebars-template">
+		<div class="row">
+			<div class="col-md-6">
+				<h2 id="car-name">{{car_details.dataset.dvla.vehicledata.match.make}} {{car_details.dataset.dvla.vehicledata.match.model}}</h2>
+				<ul id="car-summary">
+					<li>{{car_details.dataset.mvris.vrm}}</li>
+					<li>{{car_details.dataset.mvris.cc}}cc</li>
+					<li>{{car_details.dataset.dvla.colour.[1].m.desc}}</li>
+					<li>{{car_details.dataset.mvris.gearbox_type}} gearbox</li>
+					<li>{{car_details.dataset.mvris.body.desc}}</li>
+					<li>{{car_details.dataset.mvris.fuel.desc}}</li>
+				</ul>
+			</div>
+			<div class="col-md-6" id="tyre-summary">
+				<h2>Tyres for your car</h2>
+				<ul>
+					{{#each tyre_sizes.results}}
+					<li>{{tyresize}}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+	</script>
+	
+	<script id="break-down-cover-template" type="text/x-handlebars-template">
+		<p>We have searched for the cheapest available beakdown cover for your <strong>{{url}}</strong>.</p>
+		{{#each results}}
+		<div id="breakdown1" class="breakdown-result-wrapper">
+			<img class="breakdown-provider-logo" src="{{logo}}" alt="{{logo/alt}}" />
+			<p>From <span>{{price}}</span> per year</p>
+			<a href="{{proceed}}"><img src="img/go-to-site-button-results.jpg" class="breakdown-provider-gotosite" alt="Go to site" /></a>
+		</div>
+		{{/each}}
+	</script>
 
 </html>

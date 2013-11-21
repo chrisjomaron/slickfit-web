@@ -2,9 +2,11 @@ BreakdownCoverView = function(selector) {
 	this.selector = selector;
 
     this.render = function() {        
-    	$.getJSON('/breakdown', function(data) {      
-	      var source   = $("#breakdown-cover-template").html();
+    	var url = $("#vehicle-reg").val().replace(" ", "");
+    	$.getJSON('/break-down-cover/' + url, function(data) {      
+	      var source   = $("#break-down-cover-template").html();
 	      var template = Handlebars.compile(source);
+	      data.url = url;
 	      $(selector).html(template(data));
 	    })
 	    .done(function(){

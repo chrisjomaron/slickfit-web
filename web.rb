@@ -20,13 +20,6 @@ get '/servicing/:reg/:postcode' do
 	response.body
 end
 
-get '/car-details/:reg' do 
-	content_type :json
-
-	response = @http.get "http://localhost:4987/car-details/#{params[:reg]}"
-	response.body
-end
-
 get '/fitting-stations/:postcode' do 
 	content_type :json
 
@@ -70,6 +63,19 @@ get '/mot/:postcode/?:distance?/?:num_of_results?' do
 
 	response = @http.get url
 	response.body
+end
+
+get '/car-details/:reg' do
+	content_type :json
+
+	http = HTTPClient.new
+
+	car_details = JSON.parse(http.get("http://localhost:4987/car-details/#{params[:reg]}").body)
+	tyre_sizes = JSON.parse(http.get("http://localhost:4987/tyre-sizes/#{params[:reg]}").body.gsub!("Select this option ", ""))
+
+	full_response = {car_details: car_details, tyre_sizes: tyre_sizes}
+
+	JSON.pretty_generate(full_response)
 end
 
 # 
