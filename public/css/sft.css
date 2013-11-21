@@ -1,0 +1,171 @@
+header {
+	text-align:center;
+	padding: 20px;
+}
+
+h1, h2 {
+	font-family: 'ProximaBold','Gotham Black',Helvetica,Arial,sans-serif;
+}
+
+ul{
+	list-style-type:none;
+}
+
+/* Common */
+
+.box {
+	padding: 0 15px;
+	border: 1px solid #999;
+	margin-bottom:30px;
+}
+
+.primary-box {
+	background-color: #f0ebeb;
+}
+
+.secondary-box {
+	background-color: #fff;
+}
+
+/* Header Section */
+.start {
+	text-align:center;
+}
+
+.start p{
+	font-size: 16px;
+}
+
+.start .form-group {
+	padding:20px;
+}
+
+@media (max-width: 640px) {
+	header img {
+		width:99%;
+		height:99%;
+	}
+
+	.start h1{
+		font-size:24px;
+	}
+	.start p{
+		font-size: 12px;
+}
+}
+
+/* Summary Section */
+
+ul#car-summary li {
+	display:block;
+	width:45%;
+	float:left;
+}
+
+@media (max-width: 990px) {
+
+	#tyre-summary {
+		padding-top:10px;
+		clear:left;
+	}
+
+}
+/* Results Section */
+#results-wrapper {
+	clear:both;
+}
+
+#results .form-group {
+	padding-left:15px;
+}
+
+div#results h2 {
+	width:150px;
+	float:left;
+}
+
+#select-tyre-fitting {
+
+	margin-top:27px;
+}
+
+div.tyre-image {
+	float:left;
+	width:50%
+}
+
+img.tyre-image {
+	width:99%;
+}
+
+.results-box {
+	background-color:#fff;
+	width: 30%;
+	float:left;
+	margin:10px;
+	padding:10px;
+}
+
+.results-box ul {
+	margin:0;
+	padding:0;
+	float:left;
+	width:50%;
+}
+
+.tyre-price {
+	color:#00aeef;
+	font-size:22px;
+	font-family: 'ProximaBold','Gotham Black',Helvetica,Arial,sans-serif;
+	padding-bottom:10px;
+}
+
+.tyre-spec {
+	clear:left;
+	padding-top:10px;
+}
+
+#pagination-section {
+	clear:left;
+	padding:20px;
+}
+
+@media (max-width: 670px) {
+.results-box {
+	width: 44%;
+}
+.tyre-price {
+
+	font-size:20px;
+
+}
+}
+
+
+/* Breakdown Section */
+
+.breakdown-result-wrapper {
+	background-color: #fff;
+	text-align:center;
+	margin:10px 0;
+	padding:10px;
+}
+
+.clear {
+	clear:both;
+}
+
+@media (max-width: 991px) {
+	.breakdown-result-wrapper {
+		width:28%;
+		float:left;
+		margin: 0 10px
+	}
+}
+
+/* MOT Section */
+
+
+
+/* Responsive */
+
