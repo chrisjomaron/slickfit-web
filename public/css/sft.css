@@ -130,7 +130,7 @@ img.tyre-image {
 	padding:20px;
 }
 
-@media (max-width: 670px) {
+@media (max-width: 680px) {
 .results-box {
 	width: 44%;
 }
@@ -138,6 +138,15 @@ img.tyre-image {
 
 	font-size:20px;
 
+}
+}
+
+@media (max-width: 500px) {
+.results-box {
+	width: 90%;
+}
+.tyre-price {
+	font-size:20px;
 }
 }
 
@@ -151,6 +160,11 @@ img.tyre-image {
 	padding:10px;
 }
 
+.breakdown-result-wrapper p span {
+	color: #00aeef;
+	font-weight:bold;
+}
+
 .clear {
 	clear:both;
 }
@@ -162,6 +176,21 @@ img.tyre-image {
 		margin: 0 10px
 	}
 }
+
+@media (max-width: 500px) {
+	.breakdown-result-wrapper {
+		width:27%;
+	}
+	
+	.breakdown-provider-logo{
+		width:99%;
+	}
+	
+	.breakdown-provider-gotosite{
+		width:99%;
+	}
+}
+
 
 /* MOT Section */
 
