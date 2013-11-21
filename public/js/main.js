@@ -43,7 +43,14 @@ $(document).ready(function() {
 
     // carDetailsView.render();
     tyrePricesView.render();
-    //motCentresView.render();
     //breakdownCoverView.render();
-  })  
+  })
+
+
+  $("#findMOT").click(function(e) {
+    e.preventDefault();
+    motCentresView.render();
+  })
+
+
 });

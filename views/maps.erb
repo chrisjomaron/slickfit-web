@@ -13,25 +13,25 @@
     <script type="text/javascript">
       function initialize() {
         var mapOptions = {
-          center: new google.maps.LatLng(53.18909, -3.05239),
-          zoom: 14
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+              center: new google.maps.LatLng(53.18909, -3.05239),
+              zoom: 14
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-        var markerOne = new google.maps.Marker({
-		    position: new google.maps.LatLng(53.18909, -3.05239),
-		    animation: google.maps.Animation.DROP,
-		    title:"Hello World!"
-		});
+            var markerOne = new google.maps.Marker({
+    		    position: new google.maps.LatLng(53.18909, -3.05239),
+    		    animation: google.maps.Animation.DROP,
+    		    title:"Hello World!"
+    		});
 
-		var markerTwo = new google.maps.Marker({
-		    position: new google.maps.LatLng(53.18909, -3.05953),
-		    animation: google.maps.Animation.DROP,
-		    title:"Hello Mars!"
-		});
-		
-		markerOne.setMap(map);
-		markerTwo.setMap(map);
+    		var markerTwo = new google.maps.Marker({
+    		    position: new google.maps.LatLng(53.18909, -3.05953),
+    		    animation: google.maps.Animation.DROP,
+    		    title:"Hello Mars!"
+    		});
+    		
+    		markerOne.setMap(map);
+    		markerTwo.setMap(map);
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
