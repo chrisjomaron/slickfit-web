@@ -11,6 +11,7 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 		<script src="/js/handlebars.js" type="text/javascript"></script>	
 		<script src="/js/car-details.js" type="text/javascript"></script>
+		<script src="/js/breakdown-cover.js" type="text/javascript"></script>
 		<script src="/js/main.js" type="text/javascript"></script>
 	
 	</head>
@@ -24,6 +25,9 @@
 		<div id="car-details-container">
 		</div>
 
+		<div id="breakdown-cover-container">
+		</div>
+
 	</body>
 
 	<script id="car-details-template" type="text/x-handlebars-template">
@@ -31,5 +35,14 @@
 	    	<p>Make - {{make}}</p>
 	    	<p>Model - {{model}}</p>
 	    </div>
+	</script>
+
+	<script id="breakdown-cover-template" type="text/x-handlebars-template">
+	    <h3>Breakdown Cover</h3>
+	    {{#each results}}
+    		<div>
+    			{{providerName}} -{{price}} per month</td>
+    		</div>
+	    {{/each}}
 	</script>
 </html>
