@@ -2,7 +2,7 @@ CarDetailsView = function(selector) {
 
 	this.selector = selector;
 
-    this.init = function() {
+    this.render = function() {
         
     	$.getJSON('/basic-car-details', function(data) {      
 	      var source   = $("#car-details-template").html();

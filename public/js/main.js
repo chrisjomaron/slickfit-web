@@ -6,9 +6,9 @@ $(document).ready(function() {
 
   $("#search").click(function(e) {
     e.preventDefault();
-    carDetailsView.init();
-    tyrePricesView.init();
-    motCentresView.init();
+    carDetailsView.render();
+    tyrePricesView.render();
+    motCentresView.render();
   })  
 
 });

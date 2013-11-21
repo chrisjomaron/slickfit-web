@@ -1,8 +1,8 @@
 TyrePricesView = function(selector) {
 
 	this.selector = selector;
-
-    this.init = function() {
+	
+    this.render = function() {
         
     	$.getJSON('/basic-tyre-prices', function(data) {      
 	      var source   = $("#tyre-prices-template").html();
