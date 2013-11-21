@@ -3,12 +3,16 @@ BreakdownCoverView = function(selector) {
 
     this.render = function() {        
     	var url = $("#vehicle-reg").val().replace(" ", "");
+    	var element = $(selector);
+    	
+    	element.empty();
+    	$("#loader").clone().appendTo(selector).show();
     	$.getJSON('/break-down-cover/' + url, function(data) {      
 	      var source   = $("#break-down-cover-template").html();
 	      var template = Handlebars.compile(source);
 	      data.url = url;
 	      data.results = data.results.slice(0,3);
-	      $(selector).html(template(data));
+	      element.html(template(data));
 	    })
 	    .done(function(){
 	    	console.log('Finished get breakdown cover');      

@@ -4,10 +4,14 @@ CarDetailsView = function(selector) {
 
     this.render = function() {
         var url = '/car-details/' + $("#vehicle-reg").val().replace(" ", "");
+        var element = $(selector);
+
+        element.empty();
+        $("#loader").clone().appendTo(selector).show();
     	$.getJSON(url, function(data) {      
 	      var source   = $("#car-details-template").html();
 	      var template = Handlebars.compile(source);
-	      $(selector).html(template(data));
+	      element.html(template(data));
 	    })
 	    .done(function(){
 	    	console.log('Finished get car details');      
