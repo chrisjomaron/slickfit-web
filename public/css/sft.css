@@ -84,8 +84,12 @@ ul li ul{
 }
 
 /* Summary Section */
-div#car-summary {
+div#car-summary, div#car-summary-desk {
 	text-transform:uppercase;
+}
+
+h2#car-name {
+	font-size: 26px;
 }
 
 ul#car-summary li {
