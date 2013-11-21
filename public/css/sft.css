@@ -48,6 +48,13 @@ ul li ul{
 	padding:20px;
 }
 
+.loader {
+	margin: 0px auto;
+	width: 275px;
+	font-size: 26px;
+	font-weight: bold;
+}
+
 @media (max-width: 640px) {
 	header img {
 		width:99%;
@@ -113,7 +120,7 @@ img.tyre-image {
 	float:left;
 	margin:10px;
 	padding:10px;
-	height: 260px;
+	height: 285px;
 }
 
 .results-box ul {
