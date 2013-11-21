@@ -74,12 +74,14 @@ ul li ul{
 }
 
 /* Summary Section */
+div#car-summary {
+	text-transform:uppercase;
+}
 
 ul#car-summary li {
 	display:block;
 	width:45%;
 	float:left;
-	text-transform:uppercase;
 }
 
 @media (max-width: 990px) {
